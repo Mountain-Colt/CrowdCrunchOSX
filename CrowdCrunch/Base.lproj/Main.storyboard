@@ -650,7 +650,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="CrowdCrunch" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -707,14 +707,10 @@
                                     <segue destination="J3q-9D-bjB" kind="popover" popoverAnchorView="FHc-1A-LZL" popoverBehavior="t" preferredEdge="maxY" id="Tw0-2A-4ib"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPI-bS-RHR">
-                                <rect key="frame" x="18" y="448" width="124" height="25"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="CrowdCrunch" id="zKv-Pv-5Cy">
-                                    <font key="font" size="18" name="HelveticaNeue-Bold"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3L-EV-YCy">
+                                <rect key="frame" x="20" y="435" width="48" height="48"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="DyY-x3-qxc"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="FHc-1A-LZL" firstAttribute="centerX" secondItem="65G-E3-hte" secondAttribute="centerX" id="BhR-MH-7C1"/>
@@ -1063,4 +1059,7 @@
             <point key="canvasLocation" x="708.5" y="860"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="313" height="176"/>
+    </resources>
 </document>
