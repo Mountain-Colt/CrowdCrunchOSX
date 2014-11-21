@@ -687,7 +687,7 @@
                                             </connections>
                                         </collectionView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.20392156859999999" green="0.72941176470000002" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="b3x-fm-FiX">
                                     <rect key="frame" x="1" y="144" width="233" height="15"/>
@@ -734,7 +734,7 @@
                 </arrayController>
                 <userDefaultsController representsSharedInstance="YES" id="mwk-JD-F8U"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="21" y="770"/>
         </scene>
         <!--Project Item-->
         <scene sceneID="wDU-v4-12T">
@@ -761,7 +761,7 @@
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                     </button>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLo-Ui-FpE">
+                                    <textField identifier="titleText" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cLo-Ui-FpE">
                                         <rect key="frame" x="13" y="147" width="169" height="17"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Title" id="SG4-3k-cSs">
                                             <font key="font" size="13" name="HelveticaNeue-Bold"/>
@@ -796,6 +796,8 @@
                                             <font key="font" size="13" name="HelveticaNeue"/>
                                         </buttonCell>
                                         <connections>
+                                            <action selector="donatePowerClicked:" target="sUV-qO-qzj" id="Thd-qF-pOo"/>
+                                            <binding destination="sUV-qO-qzj" name="alternateTitle" keyPath="representedObject.title" id="e9n-CF-UoS"/>
                                             <binding destination="sUV-qO-qzj" name="value" keyPath="representedObject.subscribed" id="lIF-ae-xZL"/>
                                         </connections>
                                     </button>
@@ -843,6 +845,7 @@
                     <connections>
                         <outlet property="cardBackground" destination="5Vz-iS-5Ez" id="Ssc-MO-Xps"/>
                         <outlet property="projectImage" destination="IJc-3W-WDY" id="BRV-aQ-wGq"/>
+                        <outlet property="titleTextField" destination="cLo-Ui-FpE" id="AvN-KH-WIQ"/>
                     </connections>
                 </collectionViewItem>
                 <customObject id="4zj-Rb-jmv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

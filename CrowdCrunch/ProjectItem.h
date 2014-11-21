@@ -9,8 +9,14 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ProjectItem : NSCollectionViewItem{
-    IBOutlet NSImageView *projectImage;
-    IBOutlet NSButton *cardBackground;
 }
+
+@property (strong) IBOutlet NSImageView *projectImage;
+@property (strong) IBOutlet NSButton *cardBackground;
+@property (strong) IBOutlet NSTextField *titleTextField;
+
+@property (strong) IBOutlet NSArrayController* arrayController;
+
+- (IBAction)donatePowerClicked:(id)sender;
 
 @end
