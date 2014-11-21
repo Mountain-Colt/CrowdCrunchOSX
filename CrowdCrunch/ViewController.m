@@ -37,8 +37,10 @@
     NSURL *url = [NSURL URLWithString:@"http://mtcolt.herokuapp.com/api/projects/"];
     NSData *data = [self dataWithUrl:url];
     
+    
     //parse JSON data
     NSError *e = nil;
+    
     NSMutableArray *jsonArray = [NSJSONSerialization JSONObjectWithData: data options: kNilOptions error: &e];
     NSMutableArray *newProjects = [[NSMutableArray alloc] init];
     
@@ -46,7 +48,7 @@
         NSLog(@"Error parsing JSON: %@", e);
     } else {
         for(NSDictionary *item in jsonArray) {
-//            NSLog(@"Item: %@", item);
+            NSLog(@"Item: %@", item);
             Project * pmTemp = [[Project alloc] init];
             pmTemp.title = [item objectForKey:@"projectname"];
             pmTemp.text = [item objectForKey:@"projectdescription"];
@@ -68,6 +70,7 @@
 //HTTP REQUEST
 - (NSData *)dataWithUrl:(NSURL *)url
 {
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
     NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url
                                              cachePolicy:NSURLRequestReturnCacheDataElseLoad
                                              timeoutInterval:30];
@@ -85,7 +88,6 @@
     
     // Construct a String around the Data from the response
     return urlData;
-    //return [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
 }
 
 
