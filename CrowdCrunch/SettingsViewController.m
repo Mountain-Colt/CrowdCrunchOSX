@@ -114,11 +114,11 @@
         }
         
         [appDelegate setSetting:@"runHoursStartH" :hour];
-        [appDelegate setRunDuringStartHours:hour24 Minutes:nil];
+        [appDelegate setRunDuringStartHours:hour24 Minutes:-1];
         
     } else if([[textField identifier] isEqual: @"startM"]){
         [appDelegate setSetting:@"runHoursStartM" :[textField stringValue]];
-        [appDelegate setRunDuringStartHours:nil Minutes:[textField stringValue]];
+        [appDelegate setRunDuringStartHours:-1 Minutes:[[textField stringValue] intValue]];
         
     } else if([[textField identifier] isEqual: @"endH"]){
         NSString *hour = [textField stringValue];
@@ -129,11 +129,11 @@
         }
         
         [appDelegate setSetting:@"runHoursEndH" :hour];
-        [appDelegate setRunDuringEndHours:hour24 Minutes:nil];
+        [appDelegate setRunDuringEndHours:hour24 Minutes:-1];
         
     } else if([[textField identifier] isEqual: @"endM"]){
         [appDelegate setSetting:@"runHoursEndM" :[textField stringValue]];
-        [appDelegate setRunDuringEndHours:nil Minutes:[textField stringValue]];
+        [appDelegate setRunDuringEndHours:-1 Minutes:[[textField stringValue] intValue]];
     }
     
     [appDelegate setBatteryVariables];
@@ -157,7 +157,7 @@
             hour24 -= 12;
         }
     }
-    [appDelegate setRunDuringStartHours:hour24 Minutes:nil];
+    [appDelegate setRunDuringStartHours:hour24 Minutes:-1];
 }
 
 - (IBAction)runHoursEndAMPMChanged:(id)sender{
@@ -176,7 +176,7 @@
             hour24 -= 12;
         }
     }
-    [appDelegate setRunDuringEndHours:hour24 Minutes:nil];
+    [appDelegate setRunDuringEndHours:hour24 Minutes:-1];
 }
 
 - (IBAction)runOnBatteryChanged:(id)sender

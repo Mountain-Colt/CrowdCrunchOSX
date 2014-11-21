@@ -138,19 +138,19 @@
 }
 
 -(void)setRunDuringStartHours:(int)hour Minutes:(int)min{
-    if(hour){
+    if(hour && hour > -1){
         run_start_hour = hour;
     }
-    if(min){
+    if(min && min > -1){
         run_start_minutes = min;
     }
 }
 
 -(void)setRunDuringEndHours:(int)hour Minutes:(int)min{
-    if(hour){
+    if(hour && hour > -1){
         run_end_hour = hour;
     }
-    if(min){
+    if(min  && min > -1){
         run_end_minutes = min;
     }
 }

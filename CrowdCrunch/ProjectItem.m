@@ -25,7 +25,7 @@
     CGPathRef           immutablePath = NULL;
     
     // Then draw the path elements.
-    numElements = [self elementCount];
+    numElements = (int)[self elementCount];
     if (numElements > 0)
     {
         CGMutablePathRef    path = CGPathCreateMutable();
