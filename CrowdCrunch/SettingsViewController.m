@@ -35,6 +35,13 @@
         [runOnlyDuringHours setSelectedSegment:1];
     }
     
+    int runOnlyOnDaysSwitch = [[appDelegate getSetting:@"run only on days"] intValue];
+    if(runOnlyOnDaysSwitch != 0){
+        [runOnlyOnDays setSelectedSegment:0];
+    } else {
+        [runOnlyOnDays setSelectedSegment:1];
+    }
+    
     days = [appDelegate getSetting:@"run on days"];
     
     for(id day in days){
@@ -56,16 +63,35 @@
         }
     }
     
-    [stopAtBatteryPercentage setStringValue:[[appDelegate getSetting:@"stop when battery reaches"] stringValue]];
-    [runHoursStart setStringValue:[appDelegate getSetting:@"run hours start"]];
-    [runHoursEnd setStringValue:[appDelegate getSetting:@"run hours end"]];
-    
-    
     //Set segmented control listeners
     [runOnBattery setAction:@selector(runOnBatteryChanged:)];
     [runOnlyDuringHours setAction:@selector(runOnlyDuringHoursChanged:)];
     [runDays setAction:@selector(runDaysChanged:)];
+    [runOnlyOnDays setAction:@selector(runOnlyOnDaysChanged:)];
+    [self setInitialSettings];
     
+}
+
+- (void)setInitialSettings{
+    [stopAtBatteryPercentage setStringValue:[[appDelegate getSetting:@"stop when battery reaches"] stringValue]];
+    
+    [runHoursStartH setStringValue:[appDelegate getSetting:@"runHoursStartH"]];
+    [runHoursStartM setStringValue:[appDelegate getSetting:@"runHoursStartM"]];
+    
+    if([[appDelegate getSetting:@"runHoursStartAMPM"]  isEqual: @"AM"]){
+        [runHoursStartAMPM selectItemAtIndex:0];
+    } else {
+        [runHoursStartAMPM selectItemAtIndex:1];
+    }
+    
+    [runHoursEndH setStringValue:[appDelegate getSetting:@"runHoursEndH"]];
+    [runHoursEndM setStringValue:[appDelegate getSetting:@"runHoursEndM"]];
+    
+    if([[appDelegate getSetting:@"runHoursEndAMPM"]  isEqual: @"AM"]){
+        [runHoursEndAMPM selectItemAtIndex:0];
+    } else {
+        [runHoursEndAMPM selectItemAtIndex:1];
+    }
 }
 
 - (void)controlTextDidChange:(NSNotification *)notification {
@@ -75,12 +101,82 @@
     if([[textField identifier] isEqual: @"batteryPercentage"]){
         NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber *batteryPercentage = [f numberFromString:[textField stringValue]];
         [appDelegate setSetting:@"stop when battery reaches" :[f numberFromString:[textField stringValue]]];
-    } else if([[textField identifier] isEqual: @"startTime"]){
-        [appDelegate setSetting:@"run hours start" :[textField stringValue]];
-    } else if([[textField identifier] isEqual: @"endTime"]){
-        [appDelegate setSetting:@"run hours end" :[textField stringValue]];
+        [appDelegate setBatteryThreshold:[batteryPercentage intValue]];
+        
+    } else if([[textField identifier] isEqual: @"startH"]){
+        NSString *hour = [textField stringValue];
+        int hour24 = [hour intValue];
+        
+        if([runHoursStartAMPM indexOfSelectedItem] == 1){
+            hour24 += 12;
+        }
+        
+        [appDelegate setSetting:@"runHoursStartH" :hour];
+        [appDelegate setRunDuringStartHours:hour24 Minutes:nil];
+        
+    } else if([[textField identifier] isEqual: @"startM"]){
+        [appDelegate setSetting:@"runHoursStartM" :[textField stringValue]];
+        [appDelegate setRunDuringStartHours:nil Minutes:[textField stringValue]];
+        
+    } else if([[textField identifier] isEqual: @"endH"]){
+        NSString *hour = [textField stringValue];
+        int hour24 = [hour intValue];
+        
+        if([runHoursEndAMPM indexOfSelectedItem] == 1){
+            hour24 += 12;
+        }
+        
+        [appDelegate setSetting:@"runHoursEndH" :hour];
+        [appDelegate setRunDuringEndHours:hour24 Minutes:nil];
+        
+    } else if([[textField identifier] isEqual: @"endM"]){
+        [appDelegate setSetting:@"runHoursEndM" :[textField stringValue]];
+        [appDelegate setRunDuringEndHours:nil Minutes:[textField stringValue]];
     }
+    
+    [appDelegate setBatteryVariables];
+}
+
+- (IBAction)runHoursStartAMPMChanged:(id)sender{
+    NSPopUpButton *popUp = (NSPopUpButton *)sender;
+    NSLog(@"Start AMPM Changed to: %@", [popUp titleOfSelectedItem]);
+    [appDelegate setSetting:@"runHoursStartAMPM" :[popUp titleOfSelectedItem]];
+    
+    int hour24 = [[appDelegate getSetting:@"runHoursStartH"] intValue];
+    if([runHoursStartAMPM indexOfSelectedItem] == 1){
+        NSLog(@"ARGHAHAHHAH: %@", @"yeppers");
+        if(hour24 < 12){
+            hour24 += 12;
+        } else if(hour24 == 12){
+            hour24 = 0;
+        }
+    } else {
+        if(hour24 >= 12){
+            hour24 -= 12;
+        }
+    }
+    [appDelegate setRunDuringStartHours:hour24 Minutes:nil];
+}
+
+- (IBAction)runHoursEndAMPMChanged:(id)sender{
+    NSPopUpButton *popUp = (NSPopUpButton *)sender;
+    [appDelegate setSetting:@"runHoursEndAMPM" :[popUp titleOfSelectedItem]];
+    
+    int hour24 = [[appDelegate getSetting:@"runHoursEndH"] intValue];
+    if([runHoursEndAMPM indexOfSelectedItem] == 1){
+        if(hour24 < 12){
+            hour24 += 12;
+        } else if(hour24 == 12){
+            hour24 = 0;
+        }
+    } else {
+        if(hour24 >= 12){
+            hour24 -= 12;
+        }
+    }
+    [appDelegate setRunDuringEndHours:hour24 Minutes:nil];
 }
 
 - (IBAction)runOnBatteryChanged:(id)sender
@@ -88,9 +184,12 @@
     long clickedSegment = [sender selectedSegment];
     if(clickedSegment == 0){
         [appDelegate setSetting:@"run on battery power" :[NSNumber numberWithBool:YES]];
+        [appDelegate setRunOnBattery:YES];
     } else {
         [appDelegate setSetting:@"run on battery power" :[NSNumber numberWithBool:NO]];
+        [appDelegate setRunOnBattery:NO];
     }
+    [appDelegate setBatteryVariables];
 }
 
 - (IBAction)runOnlyDuringHoursChanged:(id)sender
@@ -98,16 +197,30 @@
     long clickedSegment = [sender selectedSegment];
     if(clickedSegment == 0){
         [appDelegate setSetting:@"run only during hours" :[NSNumber numberWithBool:YES]];
+        [appDelegate setRunOnlyDuringHours:YES];
     } else {
         [appDelegate setSetting:@"run only during hours" :[NSNumber numberWithBool:NO]];
+        [appDelegate setRunOnlyDuringHours:NO];
     }
+    [appDelegate setBatteryVariables];
+}
+
+-(IBAction)runOnlyOnDaysChanged:(id)sender{
+    long clickedSegment = [sender selectedSegment];
+    if(clickedSegment == 0){
+        [appDelegate setSetting:@"run only on days" :[NSNumber numberWithBool:YES]];
+        [appDelegate setRunOnlyDuringDays:YES];
+    } else {
+        [appDelegate setSetting:@"run only on days" :[NSNumber numberWithBool:NO]];
+        [appDelegate setRunOnlyDuringDays:NO];
+    }
+    [appDelegate setBatteryVariables];
 }
 
 - (IBAction)runDaysChanged:(id)sender
 {
     long clickedSegment = [sender selectedSegment];
     BOOL isSelected = [runDays isSelectedForSegment:clickedSegment];
-    NSLog(isSelected ? @"On" : @"Off");
     switch (clickedSegment) {
         case 0:
             NSLog(@"SUNDAY");
@@ -143,7 +256,7 @@
     }
     [appDelegate setSetting:@"run on days" :days];
     [runDays setSelected:isSelected forSegment:clickedSegment];
-    NSLog([runDays isSelectedForSegment:clickedSegment] ? @"YES" : @"NO");
+    [appDelegate setBatteryVariables];
 }
 
 

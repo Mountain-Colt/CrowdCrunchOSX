@@ -10,11 +10,20 @@
 
 @interface SettingsViewController : NSViewController {
     IBOutlet NSSegmentedControl *runOnBattery;
-    IBOutlet NSSegmentedControl *runOnlyDuringHours;
-    IBOutlet NSSegmentedControl *runDays;
     IBOutlet NSTextField *stopAtBatteryPercentage;
-    IBOutlet NSTextField *runHoursStart;
-    IBOutlet NSTextField *runHoursEnd;
+    
+    IBOutlet NSSegmentedControl *runOnlyOnDays;
+    IBOutlet NSSegmentedControl *runDays;
+    
+    IBOutlet NSSegmentedControl *runOnlyDuringHours;
+    
+    IBOutlet NSTextField *runHoursStartH;
+    IBOutlet NSTextField *runHoursStartM;
+    IBOutlet NSPopUpButton *runHoursStartAMPM;
+    
+    IBOutlet NSTextField *runHoursEndH;
+    IBOutlet NSTextField *runHoursEndM;
+    IBOutlet NSPopUpButton *runHoursEndAMPM;
 }
 
 //@property (readwrite, strong, nonatomic) NSMutableArray *projects;

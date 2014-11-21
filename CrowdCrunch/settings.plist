@@ -8,10 +8,20 @@
 	<integer>0</integer>
 	<key>run only during hours</key>
 	<integer>0</integer>
-	<key>run hours start</key>
-	<string>12:00am</string>
-	<key>run hours end</key>
-	<string>12:00am</string>
+	<key>runHoursStartH</key>
+	<string>12</string>
+	<key>runHoursStartM</key>
+	<string>00</string>
+	<key>runHoursStartAMPM</key>
+	<string>AM</string>
+	<key>runHoursEndH</key>
+	<string>12</string>
+	<key>runHoursEndM</key>
+	<string>00</string>
+	<key>runHoursEndAMPM</key>
+	<string>AM</string>
+	<key>run only on days</key>
+	<integer>0</integer>
 	<key>run on days</key>
 	<dict>
 		<key>Sunday</key>

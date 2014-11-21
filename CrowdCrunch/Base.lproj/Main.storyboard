@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
@@ -704,7 +704,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="J3q-9D-bjB" kind="popover" popoverAnchorView="FHc-1A-LZL" popoverBehavior="t" preferredEdge="maxY" id="1XA-uP-AMA"/>
+                                    <segue destination="J3q-9D-bjB" kind="popover" popoverAnchorView="FHc-1A-LZL" popoverBehavior="t" preferredEdge="maxY" id="Tw0-2A-4ib"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPI-bS-RHR">
@@ -865,8 +865,8 @@
                                 </segmentedCell>
                             </segmentedControl>
                             <textField identifier="batteryPercentage" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frU-DL-gOl">
-                                <rect key="frame" x="424" y="258" width="41" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="50%" drawsBackground="YES" id="hYe-hk-2Ry">
+                                <rect key="frame" x="204" y="233" width="35" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="50" drawsBackground="YES" id="hYe-hk-2Ry">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -876,16 +876,16 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TDT-zC-hQK">
-                                <rect key="frame" x="18" y="219" width="222" height="17"/>
+                                <rect key="frame" x="18" y="156" width="222" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Run only during the following hours" id="TzI-bi-LAm">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField identifier="startTime" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaZ-tf-uPv">
-                                <rect key="frame" x="317" y="216" width="66" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="12:00am" drawsBackground="YES" id="RM6-qL-QuF">
+                            <textField identifier="startH" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZaZ-tf-uPv">
+                                <rect key="frame" x="32" y="126" width="28" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="12" drawsBackground="YES" id="RM6-qL-QuF">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -895,7 +895,7 @@
                                 </connections>
                             </textField>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m0K-Yb-MhT">
-                                <rect key="frame" x="240" y="215" width="71" height="24"/>
+                                <rect key="frame" x="240" y="152" width="71" height="24"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="4Rs-in-yKX">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -904,19 +904,8 @@
                                     </segments>
                                 </segmentedCell>
                             </segmentedControl>
-                            <textField identifier="endTime" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OLW-md-4dc">
-                                <rect key="frame" x="399" y="216" width="66" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="12:00am" drawsBackground="YES" id="fUl-JE-g2B">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <outlet property="delegate" destination="J3q-9D-bjB" id="JtC-ZL-WGC"/>
-                                </connections>
-                            </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5l7-ld-s6M">
-                                <rect key="frame" x="383" y="219" width="17" height="17"/>
+                                <rect key="frame" x="160" y="129" width="17" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="to" id="k1c-IQ-iNi">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -924,15 +913,15 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zG8-MQ-tT7">
-                                <rect key="frame" x="73" y="193" width="136" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="on the following days" id="igM-LJ-d1i">
+                                <rect key="frame" x="18" y="52" width="248" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Run only on the following days" id="igM-LJ-d1i">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5cc-vO-rnf">
-                                <rect key="frame" x="225" y="187" width="187" height="25"/>
+                                <rect key="frame" x="32" y="18" width="187" height="25"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="separated" trackingMode="selectAny" id="TxM-1G-rTN">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -947,39 +936,131 @@
                                 </segmentedCell>
                             </segmentedControl>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nq-mK-BHv">
-                                <rect key="frame" x="250" y="261" width="168" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="stop when battery reaches" id="rhP-Pg-PeK">
+                                <rect key="frame" x="30" y="236" width="170" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Stop when battery reaches" id="rhP-Pg-PeK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <popUpButton identifier="startAMPM" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QEp-p7-rH9">
+                                <rect key="frame" x="103" y="123" width="55" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="PM" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Gkd-2w-cDd" id="hPK-fT-PQl">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="ghu-2b-se3">
+                                        <items>
+                                            <menuItem title="AM" id="3PO-r5-j4V"/>
+                                            <menuItem title="PM" state="on" id="Gkd-2w-cDd"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="runHoursStartAMPMChanged:" target="J3q-9D-bjB" id="zcE-ho-oya"/>
+                                </connections>
+                            </popUpButton>
+                            <textField identifier="startM" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uM-HQ-oO5">
+                                <rect key="frame" x="72" y="126" width="28" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="00" drawsBackground="YES" id="C4p-Xx-Tu8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="J3q-9D-bjB" id="qfT-fX-NRz"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jbQ-A8-Z42">
+                                <rect key="frame" x="62" y="129" width="8" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title=":" id="DvQ-G2-0JM">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField identifier="endH" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k3Y-Hc-zpN">
+                                <rect key="frame" x="181" y="126" width="28" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="12" drawsBackground="YES" id="Uuk-3N-hWC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="J3q-9D-bjB" id="T0I-5c-6as"/>
+                                </connections>
+                            </textField>
+                            <popUpButton identifier="endAMPM" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3fh-D5-RVQ">
+                                <rect key="frame" x="252" y="123" width="55" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="PM" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="0Ip-Jw-KMS" id="Dnm-iZ-fmQ">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="MXw-vU-ieL">
+                                        <items>
+                                            <menuItem title="AM" id="zAg-bM-hPj"/>
+                                            <menuItem title="PM" state="on" id="0Ip-Jw-KMS"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="runHoursEndAMPMChanged:" target="J3q-9D-bjB" id="qmO-9b-THf"/>
+                                </connections>
+                            </popUpButton>
+                            <textField identifier="endM" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s14-tk-AZQ">
+                                <rect key="frame" x="221" y="126" width="28" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="00" drawsBackground="YES" id="ErP-kf-1zS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="J3q-9D-bjB" id="mQx-T8-zAH"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bw-oO-z3E">
+                                <rect key="frame" x="211" y="129" width="8" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title=":" id="cVm-XE-jxV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V4K-r7-wC4">
+                                <rect key="frame" x="239" y="236" width="18" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="%" id="FH6-gf-SD0">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="56v-QY-muY">
+                                <rect key="frame" x="213" y="48" width="71" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="h4z-ut-Ja9">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="On" width="32" selected="YES"/>
+                                        <segment label="Off" width="32" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="runDays" destination="5cc-vO-rnf" id="09o-sv-GJS"/>
-                        <outlet property="runHoursEnd" destination="OLW-md-4dc" id="cRP-c3-sxE"/>
-                        <outlet property="runHoursStart" destination="ZaZ-tf-uPv" id="l2n-gK-icF"/>
+                        <outlet property="runHoursEndAMPM" destination="3fh-D5-RVQ" id="BDF-8k-tuo"/>
+                        <outlet property="runHoursEndH" destination="k3Y-Hc-zpN" id="0pm-wb-nFS"/>
+                        <outlet property="runHoursEndM" destination="s14-tk-AZQ" id="MhT-uF-HsV"/>
+                        <outlet property="runHoursStartAMPM" destination="QEp-p7-rH9" id="JVU-zC-RAB"/>
+                        <outlet property="runHoursStartH" destination="ZaZ-tf-uPv" id="sDe-7v-dVy"/>
+                        <outlet property="runHoursStartM" destination="8uM-HQ-oO5" id="L90-D5-2Xm"/>
                         <outlet property="runOnBattery" destination="ArQ-bu-DG6" id="yTs-jJ-ZOI"/>
                         <outlet property="runOnlyDuringHours" destination="m0K-Yb-MhT" id="RGV-iA-V6w"/>
+                        <outlet property="runOnlyOnDays" destination="56v-QY-muY" id="CJd-a8-zlN"/>
                         <outlet property="stopAtBatteryPercentage" destination="frU-DL-gOl" id="8Kw-aK-2XT"/>
                     </connections>
                 </viewController>
                 <customObject id="7Ai-yy-KWS" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="860"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="bNt-3q-Ijh">
-            <objects>
-                <viewController id="cGj-kd-cdJ" sceneMemberID="viewController">
-                    <view key="view" id="45W-LB-ibj">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="QpT-PK-sXb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="708.5" y="860"/>
         </scene>
     </scenes>
 </document>
