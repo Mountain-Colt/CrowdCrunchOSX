@@ -16,6 +16,7 @@
 		956905D81A114F5500F152CE /* CrowdCrunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 956905D71A114F5500F152CE /* CrowdCrunchTests.m */; };
 		956905E31A114F9B00F152CE /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 956905E21A114F9B00F152CE /* Project.m */; };
 		958526251A1EC5A7005C900B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 958526241A1EC5A7005C900B /* logo.png */; };
+		9585262B1A1EEB5E005C900B /* ProjectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9585262A1A1EEB5E005C900B /* ProjectItem.m */; };
 		95FB4E311A116DFE000CF995 /* fibre-optic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95FB4E301A116DFE000CF995 /* fibre-optic.jpg */; };
 		95FB4E331A117363000CF995 /* PathTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FB4E321A117363000CF995 /* PathTransformer.m */; };
 		95FB4E361A11B567000CF995 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95FB4E351A11B567000CF995 /* settings.plist */; };
@@ -49,6 +50,8 @@
 		956905E11A114F9B00F152CE /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		956905E21A114F9B00F152CE /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
 		958526241A1EC5A7005C900B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		958526291A1EEB5E005C900B /* ProjectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectItem.h; sourceTree = "<group>"; };
+		9585262A1A1EEB5E005C900B /* ProjectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectItem.m; sourceTree = "<group>"; };
 		95FB4E301A116DFE000CF995 /* fibre-optic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fibre-optic.jpg"; sourceTree = "<group>"; };
 		95FB4E321A117363000CF995 /* PathTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathTransformer.m; sourceTree = "<group>"; };
 		95FB4E341A11736C000CF995 /* PathTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathTransformer.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				95FB4E351A11B567000CF995 /* settings.plist */,
 				956905C81A114F5400F152CE /* Images.xcassets */,
 				956905CA1A114F5500F152CE /* Main.storyboard */,
+				958526291A1EEB5E005C900B /* ProjectItem.h */,
+				9585262A1A1EEB5E005C900B /* ProjectItem.m */,
 				95FB4E371A11B97A000CF995 /* SettingsViewController.h */,
 				95FB4E381A11B990000CF995 /* SettingsViewController.m */,
 				95FB4E341A11736C000CF995 /* PathTransformer.h */,
@@ -259,6 +264,7 @@
 				956905C41A114F5400F152CE /* main.m in Sources */,
 				95FB4E391A11B990000CF995 /* SettingsViewController.m in Sources */,
 				956905C21A114F5400F152CE /* AppDelegate.m in Sources */,
+				9585262B1A1EEB5E005C900B /* ProjectItem.m in Sources */,
 				956905E31A114F9B00F152CE /* Project.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
