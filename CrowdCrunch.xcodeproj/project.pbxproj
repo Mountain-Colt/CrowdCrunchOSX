@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95297F4F1A20360F006FC4DF /* fullLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 95297F4E1A20360F006FC4DF /* fullLogo.png */; };
+		9539AC7D1A2038780094A7B7 /* clouds3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9539AC7C1A2038780094A7B7 /* clouds3.jpg */; };
+		9539AC7F1A203D6A0094A7B7 /* logoBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9539AC7E1A203D6A0094A7B7 /* logoBg.png */; };
+		9539AC811A2041FF0094A7B7 /* logoText.png in Resources */ = {isa = PBXBuildFile; fileRef = 9539AC801A2041FF0094A7B7 /* logoText.png */; };
 		955F022B1A15B51800E8841B /* startDocker.sh in Resources */ = {isa = PBXBuildFile; fileRef = 955F022A1A15703500E8841B /* startDocker.sh */; };
 		956905C21A114F5400F152CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 956905C11A114F5400F152CE /* AppDelegate.m */; };
 		956905C41A114F5400F152CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 956905C31A114F5400F152CE /* main.m */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95297F4E1A20360F006FC4DF /* fullLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fullLogo.png; path = ../../../../../Downloads/fullLogo.png; sourceTree = "<group>"; };
+		9539AC7C1A2038780094A7B7 /* clouds3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = clouds3.jpg; path = ../../../../../Downloads/clouds3.jpg; sourceTree = "<group>"; };
+		9539AC7E1A203D6A0094A7B7 /* logoBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoBg.png; path = ../../../../../Downloads/logoBg.png; sourceTree = "<group>"; };
+		9539AC801A2041FF0094A7B7 /* logoText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoText.png; path = ../../../../../Downloads/logoText.png; sourceTree = "<group>"; };
 		955F022A1A15703500E8841B /* startDocker.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = startDocker.sh; sourceTree = "<group>"; };
 		956905BB1A114F5400F152CE /* CrowdCrunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrowdCrunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956905BF1A114F5400F152CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +162,10 @@
 		95FB4E2F1A116DE5000CF995 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9539AC801A2041FF0094A7B7 /* logoText.png */,
+				9539AC7E1A203D6A0094A7B7 /* logoBg.png */,
+				9539AC7C1A2038780094A7B7 /* clouds3.jpg */,
+				95297F4E1A20360F006FC4DF /* fullLogo.png */,
 				958526241A1EC5A7005C900B /* logo.png */,
 				95FB4E301A116DFE000CF995 /* fibre-optic.jpg */,
 			);
@@ -240,12 +252,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9539AC7F1A203D6A0094A7B7 /* logoBg.png in Resources */,
+				9539AC811A2041FF0094A7B7 /* logoText.png in Resources */,
 				955F022B1A15B51800E8841B /* startDocker.sh in Resources */,
 				956905C91A114F5400F152CE /* Images.xcassets in Resources */,
 				958526251A1EC5A7005C900B /* logo.png in Resources */,
+				95297F4F1A20360F006FC4DF /* fullLogo.png in Resources */,
 				95FB4E361A11B567000CF995 /* settings.plist in Resources */,
 				95FB4E311A116DFE000CF995 /* fibre-optic.jpg in Resources */,
 				956905CC1A114F5500F152CE /* Main.storyboard in Resources */,
+				9539AC7D1A2038780094A7B7 /* clouds3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

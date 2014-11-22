@@ -75,8 +75,18 @@
 
 -(void)awakeFromNib {
     NSLog(@"LOADED FROM STORYBOARD");
+    NSLog(@"HALP! %@",[self representedObject]);
     
+}
+
+-(id)copyWithZone:(NSZone *)zone
+{
+    id result = [super copyWithZone:zone];
     
+//    [NSBundle loadNibNamed:@"projectItemView" owner:result];
+    [self.storyboard instantiateControllerWithIdentifier:@"projectItemView"];
+    
+    return result;
 }
 
 

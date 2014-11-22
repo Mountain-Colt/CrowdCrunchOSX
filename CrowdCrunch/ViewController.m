@@ -15,6 +15,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[logo setWantsLayer:YES];
+//    [logo.layer setBackgroundColor:[[NSColor greenColor] CGColor]];
     
     NSCollectionViewItem *proto = [self.storyboard instantiateControllerWithIdentifier:@"projectItemView"];
     [collectionView setItemPrototype:proto];

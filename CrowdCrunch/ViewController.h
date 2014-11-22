@@ -11,6 +11,7 @@
 @interface ViewController : NSViewController {
     NSMutableArray *projects;
     IBOutlet NSCollectionView *collectionView;
+    IBOutlet NSImageView *logo;
 }
 
 @property (readwrite, strong, nonatomic) NSMutableArray *projects;
