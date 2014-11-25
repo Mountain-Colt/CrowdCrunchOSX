@@ -19,9 +19,12 @@
 		956905CC1A114F5500F152CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956905CA1A114F5500F152CE /* Main.storyboard */; };
 		956905D81A114F5500F152CE /* CrowdCrunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 956905D71A114F5500F152CE /* CrowdCrunchTests.m */; };
 		956905E31A114F9B00F152CE /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 956905E21A114F9B00F152CE /* Project.m */; };
+		95839DAB1A211010008513DE /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95839DA91A210FFD008513DE /* Sparkle.framework */; };
 		958526251A1EC5A7005C900B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 958526241A1EC5A7005C900B /* logo.png */; };
 		9585262B1A1EEB5E005C900B /* ProjectItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9585262A1A1EEB5E005C900B /* ProjectItem.m */; };
 		9585262D1A1EF126005C900B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9585262C1A1EF126005C900B /* QuartzCore.framework */; };
+		95D9750B1A239AAA001254F9 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 95839DA91A210FFD008513DE /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95D9750D1A23FEBD001254F9 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 95D9750C1A23FEBD001254F9 /* dsa_pub.pem */; };
 		95FB4E311A116DFE000CF995 /* fibre-optic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 95FB4E301A116DFE000CF995 /* fibre-optic.jpg */; };
 		95FB4E331A117363000CF995 /* PathTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FB4E321A117363000CF995 /* PathTransformer.m */; };
 		95FB4E361A11B567000CF995 /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95FB4E351A11B567000CF995 /* settings.plist */; };
@@ -37,6 +40,19 @@
 			remoteInfo = CrowdCrunch;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		95D9750A1A239A74001254F9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				95D9750B1A239AAA001254F9 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		95297F4E1A20360F006FC4DF /* fullLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fullLogo.png; path = ../../../../../Downloads/fullLogo.png; sourceTree = "<group>"; };
@@ -58,10 +74,13 @@
 		956905D71A114F5500F152CE /* CrowdCrunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrowdCrunchTests.m; sourceTree = "<group>"; };
 		956905E11A114F9B00F152CE /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Project.h; sourceTree = "<group>"; };
 		956905E21A114F9B00F152CE /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Project.m; sourceTree = "<group>"; };
+		95839DA91A210FFD008513DE /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		958526241A1EC5A7005C900B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		958526291A1EEB5E005C900B /* ProjectItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectItem.h; sourceTree = "<group>"; };
 		9585262A1A1EEB5E005C900B /* ProjectItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectItem.m; sourceTree = "<group>"; };
 		9585262C1A1EF126005C900B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		95D9750C1A23FEBD001254F9 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		95D9750E1A240055001254F9 /* dsa_pub.pem */ = {isa = PBXFileReference; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		95FB4E301A116DFE000CF995 /* fibre-optic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "fibre-optic.jpg"; sourceTree = "<group>"; };
 		95FB4E321A117363000CF995 /* PathTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathTransformer.m; sourceTree = "<group>"; };
 		95FB4E341A11736C000CF995 /* PathTransformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathTransformer.h; sourceTree = "<group>"; };
@@ -75,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95839DAB1A211010008513DE /* Sparkle.framework in Frameworks */,
 				9585262D1A1EF126005C900B /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +112,8 @@
 		956905B21A114F5400F152CE = {
 			isa = PBXGroup;
 			children = (
+				95D9750E1A240055001254F9 /* dsa_pub.pem */,
+				95D9750C1A23FEBD001254F9 /* dsa_pub.pem */,
 				9585262C1A1EF126005C900B /* QuartzCore.framework */,
 				956905BD1A114F5400F152CE /* CrowdCrunch */,
 				956905D41A114F5500F152CE /* CrowdCrunchTests */,
@@ -111,6 +133,7 @@
 		956905BD1A114F5400F152CE /* CrowdCrunch */ = {
 			isa = PBXGroup;
 			children = (
+				95839DA81A210FFD008513DE /* Framework */,
 				95FB4E2F1A116DE5000CF995 /* Images */,
 				956905E11A114F9B00F152CE /* Project.h */,
 				956905E21A114F9B00F152CE /* Project.m */,
@@ -159,6 +182,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		95839DA81A210FFD008513DE /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				95839DA91A210FFD008513DE /* Sparkle.framework */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
 		95FB4E2F1A116DE5000CF995 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +213,7 @@
 				956905B71A114F5400F152CE /* Sources */,
 				956905B81A114F5400F152CE /* Frameworks */,
 				956905B91A114F5400F152CE /* Resources */,
+				95D9750A1A239A74001254F9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -252,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D9750D1A23FEBD001254F9 /* dsa_pub.pem in Resources */,
 				9539AC7F1A203D6A0094A7B7 /* logoBg.png in Resources */,
 				9539AC871A20459D0094A7B7 /* logoText.png in Resources */,
 				955F022B1A15B51800E8841B /* startDocker.sh in Resources */,
@@ -400,8 +433,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Framework",
+					"$(PROJECT_DIR)/CrowdCrunch/Framework",
+				);
 				INFOPLIST_FILE = CrowdCrunch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -411,8 +451,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Framework",
+					"$(PROJECT_DIR)/CrowdCrunch/Framework",
+				);
 				INFOPLIST_FILE = CrowdCrunch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-Wl,-rpath,@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
