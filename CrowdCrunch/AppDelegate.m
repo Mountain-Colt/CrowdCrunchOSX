@@ -31,21 +31,50 @@
     NSString *run_end_AMPM;
     
     NSDictionary *run_only_on_these_days;
+    
+    NSTask *startVM;
+    NSTask *stopVM;
 }
 
 @end
 
 @implementation AppDelegate
 
+-(void)startVM{
+    startVM = [[NSTask alloc] init];
+    [startVM setLaunchPath:@"/bin/bash"];
+    [startVM setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"startVM" ofType:@"sh"], nil]];
+    [startVM launch];
+}
+
+-(void)stopVM{
+    stopVM = [[NSTask alloc] init];
+    [stopVM setLaunchPath:@"/bin/bash"];
+    [stopVM setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"stopVM" ofType:@"sh"], nil]];
+    [stopVM launch];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     [self getSettingsPlist];
     
     //run a bash script call startDocker in the Resources folder (wherever that is)
-    NSTask *task = [[NSTask alloc] init];
-    [task setLaunchPath:@"/bin/bash"];
-    [task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"startDocker" ofType:@"sh"], nil]];
-    [task launch];
+//    NSTask *task = [[NSTask alloc] init];
+//    [task setLaunchPath:@"/bin/bash"];
+//    [task setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"startDocker" ofType:@"sh"], nil]];
+//    [task launch];
+//    [self initializePowerSourceChanges];
+    
+    //Load scripts that start and stop the vm
+    startVM = [[NSTask alloc] init];
+    [startVM setLaunchPath:@"/bin/bash"];
+    [startVM setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"startVM" ofType:@"sh"], nil]];
+    
+    stopVM = [[NSTask alloc] init];
+    [stopVM setLaunchPath:@"/bin/bash"];
+    [stopVM setArguments:[NSArray arrayWithObjects:[[NSBundle mainBundle] pathForResource:@"stopVM" ofType:@"sh"], nil]];
+    
+    //Set initial settings
     [self initializePowerSourceChanges];
     
     if(!batteryThreshold){
@@ -55,6 +84,12 @@
     if(!run_vm_on_battery){
         run_vm_on_battery = [[data objectForKey:@"run on battery power"] boolValue];
     }
+    
+    if(!run_only_during_days){
+        run_only_during_days = [[data objectForKey:@"run only on days"] boolValue];
+    }
+    
+    [self setBatteryVariables];
 }
 
 -(NSArray*)getCurrentTimeInHourMinuteDayOfWeek{
@@ -200,8 +235,10 @@
     NSString *dayOfWeek = [self getDayOfWeek];
     
     if(! run_only_during_days){
+        run_only_during_days ? NSLog(@"RUN ONLY DURING DAYS: YES") : NSLog(@"RUN ONLY DURING DAYS: NO");
         run_vm_date = YES;
     } else if([[self getSetting:@"run on days"][dayOfWeek] boolValue]){
+        NSLog(@"%@ is %@", dayOfWeek, [self getSetting:@"run on days"][dayOfWeek]);
         run_vm_date = YES;
     }
 
@@ -210,9 +247,11 @@
     if(runVM_battery && run_vm_hours && run_vm_date){
         //start VM
         NSLog(@"RUNNING VM");
+        [self startVM];
     } else {
         //stop VM
         NSLog(@"STOPPING VM");
+        [self stopVM];
         
         //why not?
         if(!runVM_battery){

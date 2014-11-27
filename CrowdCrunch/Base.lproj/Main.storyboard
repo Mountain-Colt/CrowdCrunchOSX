@@ -689,7 +689,7 @@
                                     <constraint firstAttribute="height" constant="440" id="N8J-Sp-plZ"/>
                                     <constraint firstAttribute="width" constant="730" id="S83-wM-ezt"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="logoBg" id="ewR-8O-wkA"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="logoBg_angry" id="ewR-8O-wkA"/>
                             </imageView>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65G-E3-hte">
                                 <rect key="frame" x="0.0" y="0.0" width="730" height="440"/>
@@ -912,7 +912,7 @@
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXD-MJ-gkf">
                                 <rect key="frame" x="0.0" y="0.0" width="485" height="300"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="clouds3" id="o4n-pV-Vaf"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" imageFrameStyle="groove" image="clouds3" id="o4n-pV-Vaf"/>
                             </imageView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPb-Wd-OaF">
                                 <rect key="frame" x="20" y="120" width="445" height="63"/>
@@ -1193,7 +1193,7 @@
     </scenes>
     <resources>
         <image name="clouds3" width="845" height="528"/>
-        <image name="logoBg" width="1442" height="882"/>
+        <image name="logoBg_angry" width="1442" height="882"/>
         <image name="logoText" width="415" height="50"/>
     </resources>
 </document>
